@@ -1,1 +1,1 @@
-web: guicorn project.wsgi:application --log-file -
+web: guicorn todo_list.wsgi:application --log-file -
