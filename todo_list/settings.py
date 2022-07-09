@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 from pathlib import Path
 #
 
@@ -128,4 +128,4 @@ STATIC_URL = '/static/'
 #add
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
