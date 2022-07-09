@@ -28,7 +28,7 @@ SECRET_KEY = 'd)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'ratul-todo-app.herokuapp.com']
 
 
 # Application definition
