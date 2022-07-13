@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'd)=^c7!0-oqjmqve%(bt+p#sq6x*ipz2keh741j*-@f@_)f!1t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ratul-todo-app.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['todo-list-ratul.herokuapp.com']
 
 
 # Application definition
@@ -72,16 +73,16 @@ WSGI_APPLICATION = 'todo_list.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dfdncv71ic9ebn',
-        'HOST': 'ec2-44-195-162-77.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'qebqdxlizibhyl',
-        'PASSWORD': 'ccf9a4fd8dc5f19a8c561e7a842a56e5a39d405b06abe9adc0eb83b290e01adc'
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd5tvjppu1g1ilk',
+            'HOST': 'ec2-3-219-229-143.compute-1.amazonaws.com',
+            'PORT': 5432,
+            'USER': 'siytlkzgqbkgyu',
+            'PASSWORD': 'f92b45c341a99558d55d164f23a0471325f46e8d633734a267b1681388f0c649'
 
+        }
     }
-}
 
 
 
@@ -122,5 +123,6 @@ LOGIN_URL = 'login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+django_heroku.settings(locals())

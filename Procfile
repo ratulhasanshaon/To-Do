@@ -1,2 +1,3 @@
 
-web: gunicorn todo_list.wsgi.application --log-file -
+release: python manage.py migrate
+web: gunicorn todo_list.wsgi --log-file=-
